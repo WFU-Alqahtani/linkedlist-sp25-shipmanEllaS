@@ -58,33 +58,33 @@ public class LinkedList {
 
         System.out.println("Your new list: ");
 
-        /*
-        //Insert 20 at the head
-        curr = head;
-        Node temp;
-        Node newNode = new Node(20);
-        temp = head.next;
-        curr.next =
-        newNode.next = head;
-         */
+
+
+        //Insert 20 at the head???????
+        Node temp = head;
+        Node newNode = new Node(20, temp);
+        head = newNode;
+
 
         curr = head;
         //Insert 40 at the end
         while (curr != null) {
             if (curr.next == null) {
-                Node temp = new Node(40);
+                temp = new Node(40);
                 curr.next = temp;
+                curr = curr.next.next;
+                break;
             }
-            curr = curr.next.next;
+            curr = curr.next;
         }
 
         //Insert 60 at 4th spot
         curr = head;
-        Node temp = curr.next;
+        temp = curr.next;
         int place = 0;
         while (place <= 2) {
             if (place == 2) {
-                Node newNode = new Node(60);
+                newNode = new Node(60);
                 curr.next = newNode;
                 newNode.next = temp;
             }
